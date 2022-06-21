@@ -2,9 +2,24 @@ const request = require("supertest");
 const app = require("../app");
 const controller = require("../controllers");
 
-describe("Test data coming from API", () => {
+describe("Test open pull request data coming from API", () => {
+
+  test("It should return status code of 200", async () => {
+    
+    const response = await request(app).get('/pulls/:user/:reponame')
+    expect(response.statusCode).toEqual(200);
+
+    })
+
   test("It should display the data in an array of json data with these specific keys", async () => {
-    const data = await controller.fetchPulls();
+    const req = {
+      params: {
+        user: 'blissdismissed',
+        reponame: 'test-repo'
+      }
+    }
+    const res = {};
+    const data = await controller.fetchPulls(req, res);
     expect(data).toEqual({
       id: 1,
       number: 100,
