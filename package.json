@@ -4,7 +4,11 @@
   "description": "This is an API written in NodeJS that utilizes Github's API to return information about open pull requests in a user's repositories.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon server.js",
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",
@@ -25,6 +29,7 @@
   },
   "devDependencies": {
     "jest": "^28.1.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
   }
 }

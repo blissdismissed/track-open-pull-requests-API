@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1655837479637" clover="3.2.0">
+  <project timestamp="1655837479637" name="All files">
+    <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="13" coveredelements="13" complexity="0" loc="12" ncloc="12" packages="1" files="3" classes="3"/>
+    <file name="app.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/app.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+    </file>
+    <file name="controller.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/controller.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+    </file>
+    <file name="routes.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/routes.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
