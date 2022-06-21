@@ -8,7 +8,7 @@ function setOptions(_path) {
     headers: {
       "User-Agent": constants.user_agent
     },
-    OAUth: process.env.GITHUB_ACCESS_TOKEN
+    OAuth: process.env.GITHUB_ACCESS_TOKEN
   });
 }
 
