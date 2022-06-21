@@ -8,7 +8,8 @@ async function getZen(req, res) {
   const response = await fetch('https://api.github.com/zen', {
     method: "GET",
     headers: {
-      'User-Agent': 'blissdismissed-track-open-pull-requests-API'
+      'Accept' : 'application/vnd.github.v3+json',
+      'User-Agent': 'blissdismissed'
     }
   });
   console.log(response);
