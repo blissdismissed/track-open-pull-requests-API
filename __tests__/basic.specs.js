@@ -14,3 +14,15 @@ describe("Test root path", () => {
   });
 
 });
+
+describe("Test connection to GitHub API", () => {
+  test("It should respond with correct status", async () => {
+    const response = await request(app).get("/github_api");
+    expect(response.statusCode).toBe(200);
+  });
+
+  test("It should display the user info", async () => {
+    const response = await request(app).get("/github_api");
+    expect(response.text).toEqual("Boom, GitHub API!");
+  });
+})
