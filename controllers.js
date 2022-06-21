@@ -27,8 +27,9 @@ async function fetchPulls(req,res) {
     headers: setOptions.headers
   });
 
-  console.log(response);
-  res.send(response);
+  const data = await response.json();
+  console.log(data);
+  res.send(data);
 
 
 }
