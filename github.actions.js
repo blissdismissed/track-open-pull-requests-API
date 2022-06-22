@@ -13,30 +13,35 @@ async function pullData(user, reponame) {
   const data = await response.json();
   console.log(data);
 
-  const startPage = 1
-  const commitsPerPage = 100;
-  let numberOfCommits = 0;
+  const output = await Promise.all (data.map(async element => {
+    const startPage = 1
+    const commitsPerPage = 100;
+    let numberOfCommits = 0;
+  
+    const commitOptions = options("/repos/" + user + "/" + reponame + 
+          "/pulls/" + element.number + "/commits?per_page=" + commitsPerPage + "&page=" + startPage);
+  
+        const getCommitData = await fetch(commitOptions.baseUrl + commitOptions.hostName + commitOptions.path, {
+          method: "GET",
+          headers: commitOptions.headers
+        });
+  
+        commitData = await getCommitData.json();
+        console.log("Length: ", commitData.length);
+        numberOfCommits = commitData.length;
+      
+  
+    return {
+      id: element.id,
+      number: element.number,
+      title: element.title,
+      author: element.user.login,
+      commit_count: numberOfCommits
+    };
 
-  const commitOptions = options("/repos/" + user + "/" + reponame + 
-        "/pulls/1/commits?per_page=" + commitsPerPage + "&page=" + startPage);
-
-      const getCommitData = await fetch(commitOptions.baseUrl + commitOptions.hostName + commitOptions.path, {
-        method: "GET",
-        headers: commitOptions.headers
-      });
-
-      commitData = await getCommitData.json();
-      console.log("Length: ", commitData.length);
-      numberOfCommits = commitData.length;
-    
-
-  return {
-    id: data[0].id,
-    number: data[0].number,
-    title: data[0].title,
-    author: data[0].user.login,
-    commit_count: numberOfCommits
-  };
+  })
+  );
+  return output;
 }
 
 module.exports = {
