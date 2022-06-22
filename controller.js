@@ -32,7 +32,7 @@ async function fetchPulls(req,res) {
 
   const startPage = 1
   const commitsPerPage = 100;
-  const numberOfCommits = 0;
+  let numberOfCommits = 0;
 
   const commitOptions = options("/repos/" + user + "/" + reponame + 
         "/pulls/1/commits?per_page=" + commitsPerPage + "&page=" + startPage);
@@ -43,8 +43,8 @@ async function fetchPulls(req,res) {
       });
 
       commitData = await getCommitData.json();
-      console.log("Before: ", commitData);
-      // numberOfCommits = commitData.length;
+      console.log("Length: ", commitData.length);
+      numberOfCommits = commitData.length;
     
 
   res.send({
