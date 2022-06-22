@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1655851287625" clover="3.2.0">
-  <project timestamp="1655851287625" name="All files">
-    <metrics statements="39" coveredstatements="36" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4" elements="44" coveredelements="40" complexity="0" loc="39" ncloc="39" packages="2" files="6" classes="6"/>
+<coverage generated="1655919695165" clover="3.2.0">
+  <project timestamp="1655919695165" name="All files">
+    <metrics statements="42" coveredstatements="39" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4" elements="48" coveredelements="43" complexity="0" loc="42" ncloc="42" packages="2" files="7" classes="7"/>
     <package name="track-open-pull-requests-API">
-      <metrics statements="34" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <metrics statements="37" coveredstatements="34" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
       <file name="app.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/app.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
       </file>
       <file name="controllers.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/controllers.js">
         <metrics statements="14" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
         <line num="5" count="4" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
@@ -29,7 +29,7 @@
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
       </file>
       <file name="middlewares.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/middlewares.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -38,31 +38,37 @@
         <line num="6" count="5" type="stmt"/>
         <line num="7" count="5" type="stmt"/>
         <line num="8" count="5" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
       </file>
       <file name="routes.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/routes.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+      </file>
+      <file name="server.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/server.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
     </package>
     <package name="track-open-pull-requests-API.util">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="options.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/util/options.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
       </file>
       <file name="parameters.js" path="/Users/ishhhb/Documents/Programming/track-open-pull-requests-API/util/parameters.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
       </file>
     </package>
   </project>

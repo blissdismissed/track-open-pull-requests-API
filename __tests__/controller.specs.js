@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require("../app");
-const controller = require("../controllers");
+const controller = require("../controller");
 
 describe("Test open pull request data coming from API", () => {
 
