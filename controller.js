@@ -30,10 +30,10 @@ async function fetchPulls(req,res) {
   const data = await response.json();
   console.log(data);
   res.send({
-    id: 1,
-    number: 100,
-    title: "Pull Title",
-    author: "Jose Reyes",
+    id: data[0].id,
+    number: data[0].number,
+    title: data[0].title,
+    author: data[0].user.login,
     commit_count: 12
   });
 }
