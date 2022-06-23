@@ -20,9 +20,9 @@ async function getZen(req, res) {
 async function fetchPulls(req,res) {
   const user = req.params.user;
   const reponame = req.params.reponame;
-
+  console.log(user,reponame);
   const githubOutputData = await github.pullData(user, reponame);
-
+  console.log(githubOutputData);
   res.json(githubOutputData);
 }
 
