@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const github = require('./github.actions');
 
 function basicPage(req, res) {
