@@ -14,7 +14,9 @@ async function pullData(user, reponame) {
   );
 
   const data = await response.json();
+  console.log(data);
   const output = await outputApiData(data, user, reponame);
+  console.log(output);
   return output;
 }
 
