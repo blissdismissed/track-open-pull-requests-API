@@ -2,23 +2,34 @@ const fetch = require("node-fetch");
 const options = require("./util/options");
 
 
-async function pullData(user, reponame) {
-  const setOptions = options("/repos/" + user + "/" + reponame + "/pulls");
-
-  const response = await fetch(
-    setOptions.baseUrl + setOptions.hostName + setOptions.path,
-    {
+class GithubActions {
+  constructor({ user, repo }) {
+    Object.assign(this, { user, repo });
+    this.fetch = fetch;
+  }
+    
+  async pullData(user, reponame) {
+    const setOptions = options("/repos/" + this.user + "/" + this.repo + "/pulls");
+    this.url = setOptions.baseUrl + setOptions.hostName + setOptions.path;
+    this.options = {
       method: "GET",
       headers: setOptions.headers
     }
-  );
+    
+    const response = await this.fetch(this.url, this.options);
+   
+    this.data = await response.json();
+    console.log(this.data);
+    // this.output = await outputApiData(this.data, this.user, this.repo);
+    // console.log(output);
+    return this;
+  }
 
-  const data = await response.json();
-  console.log(data);
-  const output = await outputApiData(data, user, reponame);
-  console.log(output);
-  return output;
 }
+
+
+
+
 
 async function outputApiData(pulldata, user, reponame) {
   const output = await Promise.all(
@@ -75,5 +86,5 @@ async function getCommitCount(element, user, reponame) {
 }
 
 module.exports = {
-  pullData: pullData
+  GithubActions
 };
