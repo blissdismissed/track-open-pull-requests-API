@@ -6,7 +6,7 @@ function setOptions(_path) {
     hostName: parameters.hostname,
     path: _path,
     headers: {
-      "User-Agent": constants.user_agent
+      "User-Agent": parameters.user_agent
     },
     OAuth: process.env.GITHUB_ACCESS_TOKEN
   });
