@@ -20,7 +20,7 @@ class GithubActions {
    
     this.data = await response.json();
     console.log(this.data);
-    // this.output = await outputApiData(this.data, this.user, this.repo);
+    this.output = await outputApiData(this.data, this.user, this.repo);
     // console.log(output);
     return this;
   }
@@ -86,5 +86,5 @@ async function getCommitCount(element, user, reponame) {
 }
 
 module.exports = {
-  GithubActions
+  GithubActions, getCommitCount, outputApiData
 };

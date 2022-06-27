@@ -3,7 +3,7 @@ const controller = require("../controller");
 jest.mock("../github.actions");
 const mockGithubAction = require("../github.actions");
 mockGithubAction.pullData = jest.fn((a, b) => {
-  return "mock api results!";
+  return {output: "mock api results!"};
 });
 
 const res = {
