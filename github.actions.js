@@ -19,9 +19,7 @@ class GithubActions {
     const response = await this.fetch(this.url, this.options);
    
     this.data = await response.json();
-    console.log(this.data);
     this.output = await outputApiData(this.data, this.user, this.repo);
-    // console.log(output);
     return this;
   }
 
@@ -36,7 +34,6 @@ async function outputApiData(pulldata, user, reponame) {
     pulldata.reverse().map(async element => {
 
       const commitCount = await getCommitCount(element, user, reponame);
-      console.log("CommitCount: ", commitCount);
 
       return {
         id: element.id,

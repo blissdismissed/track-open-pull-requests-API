@@ -1,14 +1,6 @@
 const controller = require("../controller");
+const { GithubActions } = require("../github.actions");
 
-jest.mock("../github.actions");
-const mockGithubAction = require("../github.actions");
-mockGithubAction.pullData = jest.fn((a, b) => {
-  return {output: "mock api results!"};
-});
-
-const res = {
-  json: jest.fn()
-};
 const req = {
   params: {
     user: "blissdismissed",
@@ -16,18 +8,47 @@ const req = {
   }
 };
 
+const mockOutput = [
+  {
+    id: 972414895,
+    number: 1,
+    title: "add cors policy headers",
+    author: "blissdismissed",
+    commit_count: 2
+  },
+  {
+    id: 972647049,
+    number: 2,
+    title: "Update README.md",
+    author: "blissdismissed",
+    commit_count: 1
+  }
+]
+
+const res = {
+  json: jest.fn()
+};
+
 describe("test the fetchPulls action ", () => {
+  beforeEach(() => {
+    jest.mock("../github.actions");
+    jest.spyOn(GithubActions.prototype, "pullData").mockReturnValue({
+      user: req.params.user,
+      repo: req.params.reponame,
+      output: mockOutput
+    });
+  });
+
   afterEach(jest.clearAllMocks);
+
   test("it should take user and reponame as input parameters from the request", async () => {
-    await controller.fetchPulls(req, res);
-    expect(mockGithubAction.pullData).toHaveBeenCalledTimes(1);
-    expect(mockGithubAction.pullData.mock.calls[0][0]).toBe(req.params.user);
-    expect(mockGithubAction.pullData.mock.calls[0][1]).toBe(req.params.reponame);
+    const response = await controller.fetchPulls(req, res);
+    expect(response.user).toEqual(req.params.user);
+    expect(response.repo).toEqual(req.params.reponame);
   });
 
   test("it should return data coming from the github action function", async () => {
-    await controller.fetchPulls(req, res);
-    expect(mockGithubAction.pullData).toHaveBeenCalledTimes(1);
-    expect(res.json.mock.calls[0]).toEqual(["mock api results!"]);
+    const response = await controller.fetchPulls(req, res);
+    expect(response.output).toEqual(mockOutput);
   });
 });
